@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leve1</title>
+    <style>
+        .box{
+            width:400px;
+            height: 450px;
+            border: 1px solid #ccc;
+            margin:auto;
+            margin-top: 100px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .box1{
+            display: flex;
+        }
+        
+        .pic1{
+            width: 50px;
+            display: block;
+            position: absolute;
+            right: 0;
+        }
+        .pic2{
+            width: 25px;
+            position: absolute;
+            margin:20px 20px 0 0;
+        }
+        input{
+            width:360px;
+            height:50px;
+            border-style: none;
+            position: relative;
+            color: rgb(128,128,128);
+            font-size: 14px;
+            outline: none;
+       }
+     
+       .box2{
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin:0 20px 20px 0;
+       }
+       .but{
+           background-color: rgb(0, 102, 255);
+           width: 380px;
+           color: white;
+           height: 40px;
+       }
+       button:hover{
+           background-color: rgb(0,92,203);
+       }
+       .box3{
+            display: flex;
+            color: rgb(128,128,128);
+            justify-content: space-between;
+       }
+       .pic3{
+            width: 20px;
+            height: 20px;
+            padding-top:18px ;
+            margin-right: 10px;
+       }
+       .box4{
+            display: flex;
+       }
+       .footer{
+            background-color: rgb(246,246,246);
+            width:400px;
+            height: 60px;
+            border: 1px solid #ccc;
+            border-top: none;
+            margin:auto;
+            padding:0 10px ;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            color: rgb(0, 102, 255);
+
+       }
+       .pic4{
+           width: 30px;
+           height: 30px;
+           padding:10px 5px 0 0;
+
+       }
+       .foot1{
+            display: flex;
+       }
+       .title{
+            border-bottom:3.5px solid rgb(0, 102, 255);
+            padding-bottom: 15px;
+            margin-left: 20px;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+             <p >免密码登录</p> 
+             <b><p class="title">密码登录</p></b>
+             <img class="pic1" src="二维码.png">
+        </div>
+        <form>
+            <div style="border-bottom: 1px solid #ccc;width: 380px;">
+                <input type="text"  placeholder="手机号或邮箱"></input>
+
+            </div>
+
+            <div style="border-bottom: 1px solid #ccc;width: 380px;">
+                <input type="password" placeholder="密码"></input>
+                <img class="pic2" src="眼睛.png">
+            </div>
+            
+        </form>
+        <div class="box2">
+            <p style="color: rgb(23,81,153);">海外手机号登录</p>
+            <p style="color: rgb(128,128,128);">忘记密码？</p>
+        </div>
+        <button class="but">登录</button>
+        <p style="padding-top: 30px;color: rgb(128,128,128);font-size: 13px;width: 360px;">未注册手机验证后自动登录，注册即代表同意《知乎协议》《隐私保护指引》</p>
+        <p style="width: 380px ;border-bottom: 1px solid #ccc;"></p>
+
+        <div class="box3">
+            <p>社交账号登录</p>
+            <div class="box4">
+                <img class="pic3" src="微信.png">
+                <p style="padding-right:20px ;">微信</p>
+
+                <img class="pic3" src="qq.png">
+                <p style="padding-right:20px ;">QQ</p>
+    
+                <img class="pic3" src="微博.png">
+                <p style="padding-right:20px ;">微博</p>
+            </div>
+          
+        </div>
+        
+    </div>
+
+    <div class="footer">
+        <div class="foot1">
+            <img class="pic4" src="勾.png" >
+            <p>开通机构号</p>
+        </div>
+            
+        <div class="foot1">
+            <img class="pic4"  src="知乎.png" >
+            <p>下载知乎App</p>
+        </div>
+            
+    </div>
+</body>
+</html>
