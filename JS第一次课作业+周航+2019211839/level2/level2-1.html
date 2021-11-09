@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.使用prompt接收用户输入的数字（需要将输入转换为数字，如果用户输入的内容不能成功转换为数字，应让用户再一次输入，直到能转换成数字为止），再将用户输入的数字平方后通过alert展示。</title>
+    <script>
+        var num = prompt('请输入一个数字：');
+        var real_num = num - 0;
+        while(isNaN(real_num)){
+            var m = prompt('您未输入正确的数字，请重新输入：');
+            var real_num = m - 0;
+        };
+        alert('您输入的数字平方后为：'+real_num*real_num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

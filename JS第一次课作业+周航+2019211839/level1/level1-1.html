@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.对数组中的元素去重。</title>
+    <script>
+        var arr=[1,2,3,3,4,'a','a','b','c'];
+
+        function reduce(arr){
+            var res=[];
+            for(var item1 of arr){
+                var count=0;
+                for(var item2 of res){
+                    if (item1==item2){
+                        count++;break;
+                    }
+                }
+                if(count==0)
+                {res.push(item1);} 
+            }
+            return res;
+        }
+        console.log(reduce(arr));  //[1, 2, 3, 4, "a", "b", "c"]
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.函数递归实现数组扁平化。</title>
+    <script>
+        var arr = [1, [2, 3], 4, [5, [6, [7, 8]]],[9, 10]];
+        res = []; //用来存储返回的数据
+
+        function fun1(arr) {
+            for(var item of arr){
+                if(item instanceof Array){
+                    fun1(item);
+                }
+                else{
+                    res.push(item);
+                }
+            }
+        }
+
+        fun1(arr);
+        console.log(res); //[1,2,3,4,5,6,7,8,9,10];
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
