@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重定义this</title>
+    <script>
+        //"课程"对象的构造函数:
+        function course() {
+            this.coursename = "CSA前端培训";
+            this.semester = 2;
+        }
+
+        //"学生"对象的构造函数:
+        function student(name, age, gender) {
+            // course.call(this) //构造方法实现课程学期方法一
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            // var that = this; //输出性别方法一
+            this.moreinfo = function () {
+                var detail = function () {
+                    console.log(this.gender);//方法一 this ->that
+                }
+                detail.bind(this)();//输出性别方法二bind()
+                // detail();
+            }
+            course();
+        }
+        student.prototype = new course(); //原型链实现课程名和学期方法二
+
+        // 写代码实现“学生”继承“课程”，并实现以下效果：
+        var student1 = new student("小明", 18, "男");
+        console.log(student1.coursename, student1.semester); //课程名字和第几期
+        student1.moreinfo();//你的性别
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

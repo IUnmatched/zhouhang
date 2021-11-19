@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象深拷贝</title>
+    <script>
+        var data = {
+            age: 18,
+            name: "这是真的难",
+            education: ["小学", "初中", "高中", "大学", undefined, null],
+            friends: [
+                { name: "Amber", sex: "woman" },
+                { name: "Barbara", sex: "woman" },
+                { name: "Venti", sex: "man" }],
+            work: {
+                time: "2021",
+                project: { name: "test", obtain: ["css", "html", "js"] }
+            },
+            play: function () { console.log("玩滑板"); }
+        }
+
+        function Copy(obj) {
+            if (typeof obj !== 'object' || obj == null) {
+                return obj;
+            }
+            let copyObj;
+            if (obj instanceof Array) {
+                copyObj = [];
+            }
+            else {
+                copyObj = {};
+            }
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    copyObj[key] = Copy(obj[key])
+                }
+            }
+            return copyObj;
+        }
+        var copyData = Copy(data);
+        console.log(data);
+        copyData.education[0] = "Handsome";//查看拷贝是否成功
+        console.log(copyData);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
