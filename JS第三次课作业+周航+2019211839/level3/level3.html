@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现一个留言板</title>
+    <style>
+        li {
+            background-color: aquamarine;
+        }
+
+        li a {
+            float: right;
+        }
+
+        ul {
+            padding-inline-start: 0px;
+            width: 300px;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 在评论区输入留言，点击发布后，在留言板中能够插入新的留言，每一条留言旁有一个按钮可以删除该留言 -->
+    <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="发布">
+        <ul></ul>
+    </div>
+    <script>
+        var text = document.querySelector("textarea");
+        var ul = document.querySelector("ul");
+        var input = document.querySelector("input");
+        input.addEventListener("click", function () {
+            if (text.value == '') {
+                alert("请输入内容");
+                return false;
+            }
+            else {
+                var li = document.createElement("li");
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                ul.insertBefore(li, ul.children[0]);
+
+                var a = document.querySelectorAll('a');
+                for (var i = 0; i < a.length; i++) {
+                    a[i].addEventListener('click', function () {
+                        ul.removeChild(this.parentNode)
+                    })
+
+                }
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

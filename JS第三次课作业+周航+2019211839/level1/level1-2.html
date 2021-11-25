@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体大小更改按钮</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>学前端真快乐</h1>
+        <button onclick="change()">字体大小更改按钮</button>
+    </div>
+    <script>
+        var h = document.querySelector("h1");
+        var btn = document.querySelector("button");
+        var arr = ['10px', '20px', '30px', '40px'];
+        var i = 0;
+        function change() {
+            i = i > 3 ? 0 : i;
+            h.style.fontSize = arr[i];
+            i++;
+        }
+    </script>
+</body>
+
+</html>
