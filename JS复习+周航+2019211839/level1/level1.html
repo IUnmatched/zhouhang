@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level1-正则表达式</title>
+    <script>
+        let str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day."
+        str = str.match(/[\w\']+/g).join(" ");
+        str = str.replace(/d/g, function (m) {
+            return m.toUpperCase();
+        });
+        console.log(str)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

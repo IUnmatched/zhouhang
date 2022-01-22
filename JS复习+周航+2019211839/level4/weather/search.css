@@ -1,0 +1,109 @@
+html {
+    font-size: .625rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+ul,ol {
+    list-style: none;
+    padding: 0;
+}
+a {
+    display: block;
+}
+
+.search {
+    display: none;
+    top: 0;
+    left : 0;
+    z-index: 30;
+    overflow-y: scroll;
+    background: #f1f0f6;
+    position: absolute;
+    width: 100%;
+    height: 1900px;
+}
+.search span {
+    color:rgba(85,85,85,.5);;
+}
+.search .head {
+    height: 4rem;
+    margin: 1rem;
+}
+.search .head .chacha {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 6px;
+    bottom: 0;
+    width: 2.6rem;
+    background: url(	http://h5tq.moji.com/mtianqi/assets/5846f3d25650d3f5/images/icon/close.png) left center no-repeat;
+    background-size: 1.6rem 1.6rem;
+}
+.arrow {
+    float: left;
+    width: 2.5rem;
+    height: 4rem;
+    background: url(http://h5tq.moji.com/mtianqi/assets/5846f3d25650d3f5/images/icon/return.png) center center no-repeat;
+    background-size: 1.1rem 2rem;
+}
+.box {
+    position: relative;
+    height: 4rem;
+    width: 87%;
+}
+
+.box input {
+    left: 0;
+    width: 93%;
+    height: 4rem;
+    padding: 0;
+    color: #555;
+    font-size: 1.2rem;
+    text-indent: 1rem;
+    outline: 0;
+    background: #fff;
+    border: 1px solid #e5e4e7;
+    border-radius: 0.5rem;
+}
+
+.search dl dt {
+    margin: 0 10px;
+    height: 3.1rem;
+    color: rgba(85,85,85,.5);
+    font-size: 1.2rem;
+}
+
+.search dl dd {
+    padding: 0 0 2.8rem;
+}
+.search dl dd ul{
+    clear: both;
+    overflow: hidden;
+}
+.local-city .first {
+    border-color: #0ca2eb;
+}
+.search dl li {
+    text-align: center;
+    float: left;
+    width: 28%;
+    height: 3.2rem;
+    margin: 1rem 0 0 3.5%;
+    border: 1px solid #e5e5e7;
+    border-radius: 6px;
+    background: #fff;
+}
+.addnote .jilu li a {
+    color: #555;
+}
+.search dl li a{
+    padding: 0 10px;
+    color: #555;
+    line-height: 3.2rem;
+    font-size: 1.2rem;
+}
+.delete {
+    float: right;
+}

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link rel="stylesheet" href="tq.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="qweather-icons.css">
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/echarts.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="search">
+        <div class="head">
+            <div class="arrow"></div>
+            <div class="box">
+                <input id="in" type="text" placeholder="请输入城市名">
+                <span class="chacha"></span>
+                <!--叉叉-->
+            </div>
+        </div>
+
+        <dl class="local-city">
+            <dt>当前城市</dt>
+            <dd>
+                <ul>
+                    <li class="first">
+                        <a>大渡口区</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <dl class="addnote">
+            <dt>添加记录
+                <span class="delete">删除</span>
+            </dt>
+            <dd>
+                <ul class="jilu"></ul>
+            </dd>
+        </dl>
+
+        <dl class="hotcity">
+            <dt>热搜城市</dt>
+            <dd>
+                <ul class="hot">
+                </ul>
+            </dd>
+        </dl>
+
+        <!-- 搜索列表 -->
+        <div class="seartab">
+            <ul class="tableul">
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <!-- 搜索 -->
+        <div class="cao">
+            <div class="newye"></div>
+            <div class="cq">重庆市</div>
+        </div>
+
+
+        <!-- 疫情资讯 、安全出行 -->
+        <div class="pic1">
+            <a class="left" href="https://html5.moji.com/tpd/gzbd/index.html">
+                <img src="http://h5tq.moji.com/mtianqi/assets/images/yiqing/2.png">
+                <i>疫情资讯</i>
+            </a>
+
+            <a class="right" href="https://html5.moji.com/tpd/safetravel/safetravel.html?t=1580984067263"">
+                    <img src=" http://h5tq.moji.com/mtianqi/assets/images/yiqing/1.png">
+                <i>安全出行</i>
+            </a>
+        </div>
+
+        <!-- 阴晴 -->
+        <div class="tpr"></div>
+
+        <!-- 温度 -->
+        <section class="temp">
+            <div class="tpr_left">
+                <em class="tempa"></em>
+                <p class="wind"></p>
+                <p class="wenzi">天冷了，该加衣服了！</p>
+            </div>
+            <div class="tpr_right">
+                <ul>
+                    <li>
+                        <a href="http://m.moji.com/aqi/china/chongqing/chongqing">
+                            <span class="rig_pit">
+                                <img src="http://h5tq.moji.com/mtianqi/assets/images/aqi/2.png">
+                            </span>
+                            <strong class="airqul"></strong>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <!-- 今天/明天 -->
+    <article>
+        <div class="only firstkid">
+            <div class="b_left">
+                <i>今天</i>
+                <em id="pi">轻度</em>
+                <span class="today"></span>
+            </div>
+            <div class="left_bot">
+                <i id='statod'></i>
+                <img id="nanle1" alt="wrong">
+            </div>
+        </div>
+
+        <div class="only">
+            <div class="b_right">
+                <i>明天</i>
+                <em id="pi2">轻度</em>
+                <span class="tomo"></span>
+            </div>
+            <div class="right_bot">
+                <i id="statom"></i>
+                <img id="nanle2" alt="wrong">
+
+            </div>
+        </div>
+    </article>
+
+    <!-- 日落 -->
+    <div class="down">
+        <i class="ri">日落 18:00</i>
+        <span class="act1">温度</span>
+        <span class="act2">风力</span>
+        <em class="jian">24小时</em>
+
+
+        <div class="chart1"></div>
+        <div class="chart2"></div>
+    </div>
+
+    <!-- 折线图 -->
+    <div class="line">
+        <ul>
+            <li>
+                <i class="num1">周日</i>
+                <di>
+                    <dd id="q1">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq1"></strong></dd>
+                </dl>
+                <p id="y1"></p>
+                <dl>
+                    <dd id="x1"></dd>
+                    <dd id="z1"></dd>
+                </dl>
+            </li>
+
+            <li>
+                <i class="num2">周一</i>
+                <di>
+                    <dd id="q2">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq2"></strong></dd>
+                </dl>
+                <p id="y2"></p>
+                <dl>
+                    <dd id="x2"></dd>
+                    <dd id="z2"></dd>
+                </dl>
+            </li>
+
+            <li>
+                <i class="num3">周二</i>
+                <di>
+                    <dd id="q3">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq3"></strong></dd>
+                </dl>
+                <p id="y3"></p>
+                <dl>
+                    <dd id="x3"></dd>
+                    <dd id="z3"></dd>
+                </dl>
+            </li>
+
+            <li>
+                <i class="num4">周三</i>
+                <di>
+                    <dd id="q4">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq4"></strong></dd>
+                </dl>
+                <p id="y4"></p>
+                <dl>
+                    <dd id="x4"></dd>
+                    <dd id="z4"></dd>
+                </dl>
+            </li>
+
+            <li>
+                <i class="num5">周四</i>
+                <di>
+                    <dd id="q5">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq5"></strong></dd>
+                </dl>
+                <p id="y5"></p>
+                <dl>
+                    <dd id="x5"></dd>
+                    <dd id="z5"></dd>
+                </dl>
+            </li>
+
+            <li>
+                <i class="num6">周五</i>
+                <di>
+                    <dd id="q6">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq6"></strong></dd>
+                </dl>
+                <p id="y6"></p>
+                <dl>
+                    <dd id="x6"></dd>
+                    <dd id="z6"></dd>
+                </dl>
+            </li>
+
+            <li>
+                <i class="num7">周六</i>
+                <di>
+                    <dd id="q7">
+                    </dd>
+                    <dt>
+                        <img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w0.png" alt="">
+                    </dt>
+                </di>
+                <dl class="aftline">
+                    <dt><img src="	http://h5tq.moji.com/mtianqi/assets/images/wea/w30.png" alt=""></dt>
+                    <dd><strong id="qq7"></strong></dd>
+                </dl>
+                <p id="y7"></p>
+                <dl>
+                    <dd id="x7"></dd>
+                    <dd id="z7"></dd>
+                </dl>
+            </li>
+
+        </ul>
+        <!-- 图 -->
+        <div class="charts"></div>
+    </div>
+
+    <!-- station -->
+    <div class="station">
+        <ol>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+                    ">
+                </span>
+                <em>约会 较不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+                ">
+                </span>
+                <em>美发 一般</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+                ">
+                </span>
+                <em>舒适度 较不舒适</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>路况 干燥</em>
+            </li>
+            <li>
+                <span>
+                    <img src="		http://h5tq.moji.com/mtianqi/assets/images/script/26.png
+            ">
+                </span>
+                <em>运动 不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>逛街 较适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="http://h5tq.moji.com/mtianqi/assets/images/script/28.png
+            ">
+                </span>
+                <em>钓鱼 较适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>防晒 较弱</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>雨伞 不带伞</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>风寒 冷</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>心情 较好</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>猫咪 不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>狗狗 较适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="		http://h5tq.moji.com/mtianqi/assets/images/script/12.png
+            ">
+                </span>
+                <em>感冒 可能</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>放风筝 不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>广场舞 较适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>旅游 一般</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>晨练 较不宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>晾晒 基本适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="		http://h5tq.moji.com/mtianqi/assets/images/script/17.png
+            ">
+                </span>
+                <em>洗车 较适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="			http://h5tq.moji.com/mtianqi/assets/images/script/18.png
+            ">
+                </span>
+                <em>空气污染扩散 良</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>空调开启 开启制暖</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>息斯敏过敏 不易发</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>中暑 不宜中暑</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/5.png
+            ">
+                </span>
+                <em>交通 良好</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>划船 不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="		http://h5tq.moji.com/mtianqi/assets/images/script/7.png
+            ">
+                </span>
+                <em>划船 不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>啤机 不适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>夜生活 较适宜</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/20.png
+            ">
+                </span>
+                <em>穿衣 寒冷</em>
+            </li>
+            <li>
+                <span>
+                    <img src="	http://h5tq.moji.com/mtianqi/assets/images/script/default.png
+            ">
+                </span>
+                <em>紫外线 弱</em>
+            </li>
+        </ol>
+    </div>
+
+    <footer>
+        本页面由<em>墨迹天气</em>提供
+    </footer>
+
+    <!-- 广告 -->
+    <div class="last">
+        <div>
+            <img src="https://promo.moji.com/public/images/download_pic2.png">
+            <span class="cha">
+            </span>
+        </div>
+    </div>
+
+    <!-- 广告隐藏 -->
+    <script>
+        var adv = document.querySelector('.last');
+        var span = document.querySelector('.cha');
+        span.addEventListener('click', () => {
+            adv.style.display = 'none';
+        })
+    </script>
+
+    <script src="JS/line.js"></script>
+    <script src='JS/tq.js'></script>
+    <script src="JS/newjs.js"></script>
+    <script src="JS/search.js"></script>
+</body>
+
+</html>
